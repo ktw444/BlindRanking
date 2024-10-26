@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cogan's Blind Ranking Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #option { font-size: 24px; margin: 20px; }
+        #ranking, #gameArea { display: none; }
+        #rankedOptions { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Cogan's Blind Ranking Game</h1>
+
+    <!-- Game category selection -->
+    <div id="categorySelect">
+        <label for="category">Select a category:</label>
+        <select id="category">
+            <option value="YOU">YOU</option>
+            <option value="ME">ME</option>
+            <option value="US">US</option>
+        </select>
+
+        <label for="subcategory">Select a subcategory:</label>
+        <select id="subcategory"></select>
+
+        <button id="startGame">Start Game</button>
+    </div>
+
+    <!-- Game area -->
+    <div id="gameArea">
+        <div id="option">Loading...</div>
+        <div id="ranking">
+            <input type="number" id="rankInput" placeholder="Rank (1-10)" min="1" max="10">
+            <button id="submitRank">Submit Rank</button>
+        </div>
+        <div id="rankedOptions">
+            <h2>Ranked Options:</h2>
+            <ul id="rankedList"></ul>
+        </div>
+        <div id="finalResults"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

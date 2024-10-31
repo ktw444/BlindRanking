@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cogan's Blind Ranking Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #option { font-size: 24px; margin: 20px; }
+        #gameArea, #categorySelect { display: none; }
+        #rankingBoxes {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Display 5 boxes per row */
+            gap: 10px;
+            max-width: 500px; /* Adjust as needed */
+            margin-top: 20px;
+        }
+        .rankingBox {
+            border: 2px solid #333;
+            padding: 10px;
+            width: 90px;   /* Set width for square size */
+            height: 90px;  /* Set height equal to width */
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #returnButton { margin-top: 20px; display: none; }
+    </style>
+</head>
+<body>
+    <h1>Cogan's Blind Ranking Game</h1>
+
+    <!-- Password input -->
+    <div id="passwordSection">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password">
+        <button id="verifyPassword">Enter Game</button>
+    </div>
+
+    <!-- Game category selection -->
+    <div id="categorySelect">
+        <label for="category">Select a category:</label>
+        <select id="category">
+            <option value="YOU">YOU</option>
+            <option value="ME">ME</option>
+            <option value="US">US</option>
+        </select>
+
+        <label for="subcategory">Select a subcategory:</label>
+        <select id="subcategory"></select>
+
+        <button id="startGame">Start Game</button>
+    </div>
+
+    <!-- Game area -->
+    <div id="gameArea">
+        <div id="optionContainer">
+            <img id="optionImage" src="" alt="Option Image" style="width:150px; height:150px; margin-bottom: 10px;">
+            <div id="option">Loading...</div>
+        </div>
+        
+        <div id="rankingBoxes">
+            <!-- Ranking boxes numbered 1-10 -->
+            <div class="rankingBox" data-rank="1">1</div>
+            <div class="rankingBox" data-rank="2">2</div>
+            <div class="rankingBox" data-rank="3">3</div>
+            <div class="rankingBox" data-rank="4">4</div>
+            <div class="rankingBox" data-rank="5">5</div>
+            <div class="rankingBox" data-rank="6">6</div>
+            <div class="rankingBox" data-rank="7">7</div>
+            <div class="rankingBox" data-rank="8">8</div>
+            <div class="rankingBox" data-rank="9">9</div>
+            <div class="rankingBox" data-rank="10">10</div>
+        </div>
+        <div id="finalResults"></div>
+        <button id="returnButton">Return to Category Selection</button> 
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
